@@ -3,64 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Blog</title>
+    <!-- 본인 학번과 이름으로 타이틀을 변경하세요 -->
+    <title>Final Multimodal Project | 학번 이름</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- 과제 정보 상단 헤더 -->
     <header>
-        <div class="container">
-            <h1 class="logo"><a href="#">DevLog</a></h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Posts</a></li>
-                </ul>
-            </nav>
+        <div class="container project-header">
+            <div class="course-info">
+                <span class="badge">Creative Writing Course</span>
+                <h1>The Multimodal Personal Essay</h1>
+            </div>
+            <div class="student-info">
+                <p class="student-id">Student ID: <strong>202XXXXXXXX</strong></p>
+                <p class="student-name">Name: <strong>Your Name</strong></p>
+            </div>
         </div>
     </header>
 
     <main class="container">
-        <section class="main-content">
-            <h2>최근 게시글</h2>
-            
-            <article class="post-card">
-                <span class="post-date">2026. 05. 31</span>
-                <h3><a href="#">첫 번째 블로그 포스트 제목</a></h3>
-                <p>GitHub Pages를 이용해 나만의 블로그를 개설했습니다. HTML과 CSS를 활용하여 깔끔하고 심플한 디자인으로 시작합니다. 앞으로 개발 관련 유익한 정보들을 기록할 예정입니다...</p>
-                <a href="#" class="read-more">더 보기 &rarr;</a>
-            </article>
 
-            <article class="post-card">
-                <span class="post-date">2026. 05. 30</span>
-                <h3><a href="#">웹 퍼블리싱 기초: HTML과 CSS란?</a></h3>
-                <p>웹 페이지의 뼈대를 구성하는 HTML과 시각적인 스타일을 담당하는 CSS의 핵심 개념을 정리합니다. 시맨틱 태그의 중요성과 기본적인 레이아웃 배치 방법에 대해 알아봅니다...</p>
-                <a href="#" class="read-more">더 보기 &rarr;</a>
+        <!-- 섹션 1: 에세이 및 멀티미디어 본문 (Step 1 & 2 통합) -->
+        <section class="essay-section">
+            <h2 class="section-title">Step 1 & 2: Personal Essay with Multimedia</h2>
+            
+            <!-- 오디오 플레이어 (멀티미디어 요소 1: 내 목소리 낭독 예시) -->
+            <div class="audio-player-box">
+                <p>🎙️ Listen to my authentic voice reading the text:</p>
+                <audio controls src="audio/my-voice.mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <!-- 에세이 본문 시작 -->
+            <article class="essay-content">
+                <!-- 에세이 제목 -->
+                <h3 class="essay-title">Here Goes Your Essay Title</h3>
+
+                <!-- 문단 1 -->
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 여기에 에세이 첫 번째 문단을 입력하세요. 교수님이 문법은 크게 신경 쓰지 않는다고 하셨으니, 자신의 진정성 있는 목소리(Authentic Voice)로 이야기를 채워나가면 됩니다. (최소 500단어 이상 채우기)
+                </p>
+
+                <!-- 시각 자료 배치 (멀티미디어 요소 2: 직접 찍은 사진 예시) -->
+                <figure class="media-wrapper">
+                    <!-- img/my-photo.jpg 대신 본인 사진 파일 경로 입력 -->
+                    <img src="img/my-photo.jpg" alt="Personal meaningful object or place">
+                    <figcaption>[Figure 1] A photograph capturing the core theme of my journey.</figcaption>
+                </figure>
+
+                <!-- 문단 2 -->
+                <p>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 여기에 두 번째 문단을 입력하세요. 축약형(don't, it's)이나 문장 앞의 And, But, 혹은 슬랭을 적절히 섞어 내 감정을 생생하게 전달해 보세요.
+                </p>
+
+                <!-- 영상 자료 배치 (멀티미디어 요소 3: 유튜브나 소셜미디어 뉴스 영상 등) -->
+                <div class="media-wrapper video-container">
+                    <!-- 비디오 파일일 경우 -->
+                    <video controls src="video/my-video.mp4"></video>
+                    <!-- 유튜브 공유 코드(iframe)를 넣고 싶다면 위 video 태그를 지우고 여기에 붙여넣으세요 -->
+                </div>
+
+                <!-- 문단 3 -->
+                <p>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 에세이의 결론 부분을 작성하는 칸입니다. 전체 텍스트가 이 웹사이트에 온전히 통합되어 있어야 교수님이 읽을 때 흐름이 끊기지 않습니다.
+                </p>
             </article>
         </section>
 
-        <aside class="sidebar">
-            <div class="widget profile">
-                <h3>Profile</h3>
-                <div class="profile-img"></div>
-                <p class="profile-name">Your Name</p>
-                <p class="profile-bio">지속 가능한 개발을 지향하는 프론트엔드 개발자입니다.</p>
+        <!-- 구분선 -->
+        <hr class="section-divider">
+
+        <!-- 섹션 2: 작품 설명서 (Step 3: AI 사용 절대 금지 영역) -->
+        <section class="explanation-section">
+            <h2 class="section-title">Step 3: Multimodal Work Explanation</h2>
+            <div class="explanation-box">
+                <p class="word-count-notice">⚠️ Total word count must be at least 200 words (Written without AI).</p>
+                
+                <div class="explanation-content">
+                    <h4>1. Rationale for Multimedia Choices</h4>
+                    <p>
+                        In this project, I integrated three major multimedia components: my own voice recording, a personal photograph, and a video clip. I chose the voice recording because... (여기에 각 멀티미디어 요소를 '왜' 선택했고, 전체 프로젝트에서 어떤 '의미'를 가지는지 구체적이고 개인적인 이유를 적으세요).
+                    </p>
+
+                    <h4>2. Language & Literary Techniques Used</h4>
+                    <p>
+                        To enhance the narrative, I employed several literary techniques covered in class, such as metaphors and colloquial slang to express my true self... (수업 시간에 배웠던 문학적/서사적 기법 중 본인이 에세이에 녹여낸 기법들을 명시해 주세요).
+                    </p>
+                </div>
             </div>
-            <div class="widget categories">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="#">HTML / CSS (12)</a></li>
-                    <li><a href="#">JavaScript (8)</a></li>
-                    <li><a href="#">Git / GitHub (5)</a></li>
-                </ul>
-            </div>
-        </aside>
+        </section>
+
     </main>
 
+    <!-- 푸터 -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Your Name. Powered by GitHub Pages.</p>
+            <p>Submitted for the Final Writing Project &copy; 2026.</p>
         </div>
     </footer>
 
