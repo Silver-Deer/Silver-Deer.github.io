@@ -1,199 +1,271 @@
-/* 기본 초기화 */
+/* 고급 모던 미니멀리즘 리셋 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth; /* 링크 클릭 시 스크롤이 부드럽게 이동하는 기술 */
 }
 
 body {
-    font-family: 'Georgia', 'Times New Roman', serif; /* 에세이의 감성을 살리는 세리프체 */
-    background-color: #fcfbfa; /* 눈이 편안한 미색 배경 */
-    color: #292929;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #0a0a0c; /* 고급스러운 다크 모드 베이스 */
+    color: #e2e8f0;
     line-height: 1.8;
 }
 
 .container {
     width: 100%;
-    max-width: 800px; /* 가독성을 위해 본문 폭을 좁게 제한 */
+    max-width: 850px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-/* 상단 헤더 (과제 전용 정보창) */
+/* 헤더: 그라디언트 하이라이트 효과 */
 header {
-    background-color: #ffffff;
-    border-bottom: 2px solid #111111;
-    padding: 40px 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(180deg, #13131a 0%, #0a0a0c 100%);
+    padding: 60px 0 40px 0;
+    border-bottom: 1px solid #1e1e2f;
 }
 
 .project-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 20px;
+    gap: 30px;
 }
 
 .badge {
     display: inline-block;
-    background-color: #111111;
+    background: linear-gradient(90deg, #6366f1, #a855f7); /* 인디고-퍼플 그라디언트 뱃지 */
     color: #ffffff;
     font-size: 0.75rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 4px 8px;
-    margin-bottom: 12px;
-    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
 }
 
 header h1 {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     font-weight: 800;
-    color: #111111;
-    line-height: 1.2;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-top: 4px;
 }
 
 .student-info {
     text-align: right;
-    font-size: 0.95rem;
-    color: #555555;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    background: #151522;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #222235;
 }
 
 .student-info strong {
-    color: #111111;
+    color: #6366f1;
 }
 
-/* 메인 컨텐츠 구조 */
+/* 동적 상단 고정 타임라인 바 (Sticky Navigation) */
+.timeline-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(12px); /* 뒤에 있는 본문이 유리에 비친 것처럼 흐려지는 고급 효과 */
+    border-bottom: 1px solid #1e1e2f;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #94a3b8;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 6px 16px;
+    border-radius: 6px;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+    background-color: #1e1e2f;
+    transform: translateY(-2px); /* 마우스 올리면 살짝 떠오르는 동적 효과 */
+}
+
+/* 메인 구조 및 타임라인 블록 */
 main {
     margin-top: 60px;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
 }
 
 .section-title {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #888888;
-    margin-bottom: 30px;
-    border-left: 3px solid #111111;
-    padding-left: 10px;
-}
-
-/* 에세이 영역 스타일링 */
-.audio-player-box {
-    background-color: #f1f3f5;
-    padding: 20px;
-    border-radius: 6px;
+    color: #6366f1;
     margin-bottom: 40px;
-    font-family: -apple-system, sans-serif;
-    font-size: 0.9rem;
-}
-
-.audio-player-box audio {
-    width: 100%;
-    margin-top: 10px;
+    font-weight: 700;
 }
 
 .essay-title {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #111111;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
     text-align: center;
+    margin-bottom: 60px;
 }
 
-.essay-content p {
-    font-size: 1.15rem;
-    margin-bottom: 25px;
+/* 1,2,3학년 블록 디자인 */
+.timeline-block {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid #222235; /* 세로 타임라인 선 생성 */
+    margin-bottom: 80px;
+}
+
+.timeline-block::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #6366f1; /* 타임라인 꼭짓점 노드 */
+    box-shadow: 0 0 10px #6366f1;
+}
+
+.year-tag {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.timeline-block p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
     text-align: justify;
+    margin-bottom: 30px;
 }
 
-/* 멀티미디어(사진/영상) 하이라이트 연출 */
+/* 멀티미디어 패널 고급화 */
 .media-wrapper {
-    margin: 40px 0;
-    background-color: #ffffff;
-    padding: 16px;
-    border: 1px solid #e5e5e5;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    text-align: center;
+    background-color: #11111b;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #1e1e2f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.media-wrapper:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.1);
 }
 
 .media-wrapper img, 
 .media-wrapper video {
     width: 100%;
-    max-height: 500px;
-    object-fit: contain;
+    border-radius: 8px;
+    display: block;
 }
 
 .media-wrapper figcaption {
-    font-family: -apple-system, sans-serif;
     font-size: 0.85rem;
-    color: #666666;
-    margin-top: 12px;
+    color: #64748b;
+    margin-top: 15px;
+    text-align: center;
 }
 
-/* 섹션 구분선 */
+/* 고급 스크롤 페이드인 효과 (CSS 애니메이션) */
+.fade-in-section {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 구분선 */
 .section-divider {
     border: 0;
     height: 1px;
-    background: #e5e5e5;
-    margin: 60px 0;
+    background: linear-gradient(90deg, transparent, #1e1e2f, transparent);
+    margin: 8px 0 60px 0;
 }
 
-/* Step 3 크리틱 설명서 박스 */
+/* Step 3 설명서 영역 */
 .explanation-box {
-    background-color: #ffffff;
-    border: 1px dashed #111111;
-    padding: 35px;
-    border-radius: 4px;
+    background: linear-gradient(145deg, #11111b, #0c0c14);
+    border: 1px solid #222235;
+    padding: 40px;
+    border-radius: 12px;
 }
 
 .word-count-notice {
-    font-family: -apple-system, sans-serif;
     font-size: 0.85rem;
-    color: #d94141;
+    color: #f87171;
     font-weight: 600;
     margin-bottom: 25px;
 }
 
 .explanation-content h4 {
-    font-family: -apple-system, sans-serif;
-    font-size: 1.05rem;
-    color: #111111;
-    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-top: 25px;
     margin-bottom: 10px;
 }
 
 .explanation-content p {
-    font-size: 1.05rem;
-    color: #444444;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #94a3b8;
 }
 
 /* 푸터 */
 footer {
-    border-top: 1px solid #e5e5e5;
-    padding: 40px 0;
+    border-top: 1px solid #1e1e2f;
+    padding: 50px 0;
     text-align: center;
-    font-family: -apple-system, sans-serif;
     font-size: 0.85rem;
-    color: #999999;
+    color: #475569;
 }
 
-/* 모바일 반응형 처리 */
-@media (max-width: 600px) {
+/* 반응형 모바일 레이아웃 */
+@media (max-width: 640px) {
     .project-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
     }
     .student-info {
         text-align: left;
+        width: 100%;
     }
-    header h1 {
-        font-size: 1.8rem;
-    }
-    .essay-title {
-        font-size: 1.6rem;
+    .nav-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 }
