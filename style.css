@@ -3,7 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth; /* 링크 클릭 시 스크롤이 부드럽게 이동하는 기술 */
+}
+
+html {
+    scroll-behavior: smooth; /* 여기로 이동! */
 }
 
 body {
@@ -135,6 +138,7 @@ main {
     padding-left: 30px;
     border-left: 2px solid #222235; /* 세로 타임라인 선 생성 */
     margin-bottom: 80px;
+    scroll-margin-top: 120px;
 }
 
 .timeline-block::before {
