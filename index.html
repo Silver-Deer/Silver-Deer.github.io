@@ -44,7 +44,7 @@
                 <div id="grade-1" class="timeline-block fade-in-section">
                     <span class="year-tag">Freshman Year (Grade 1)</span>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 여기에 고등학교 1학년 시절의 경험을 작성하세요. 낯선 환경에 적응하며 느꼈던 정체성의 혼란이나 소속감에 대한 이야기를 수업 테마(Identity/Belonging)와 연결하여 고유한 목소리로 풀어내시면 좋습니다.
+                        Ho
                     </p>
                     <!-- 멀티미디어 요소 1: 1학년 시절을 대표하는 직접 찍은 사진 -->
                     <figure class="media-wrapper">
@@ -110,6 +110,29 @@
             <p>Designed for the Final Creative Writing Milestone &copy; 2026.</p>
         </div>
     </footer>
-
+    
+    <script>
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // 뚝 끊기며 이동하는 기본 동작 강제 차단
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // 상단 고정 메뉴바 높이(약 100px)만큼 빼고 스크롤 위치 계산
+                    const headerOffset = 100;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+      
+                    // 브라우저 내장 스크롤 기능으로 부드럽게 이동
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
